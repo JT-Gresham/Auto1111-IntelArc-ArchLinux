@@ -309,7 +309,7 @@ def requirements_met(requirements_file):
 
 def prepare_environment():
     if os.environ.get("USE_OPENVINO") == "1":
-        torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==2.1.0 torchvision==0.16.0")
+        torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==2.1.0.post2 torchvision==0.16.0.post2 intel-extension-for-pytorch==2.1.30+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/")
         requirements_file = os.environ.get('REQS_FILE', "requirements_versions.txt")
     else:
         torch_index_url = os.environ.get('TORCH_INDEX_URL', "https://download.pytorch.org/whl/cu118")
